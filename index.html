@@ -4,62 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>油飯DD省錢攻略_LINE社群專屬折扣碼</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: "Arial", sans-serif;
+      font-family: Arial, sans-serif;
       color: #fff;
       background: url('https://ppt.cc/fWENsx@.jpg') no-repeat center center/cover;
-      filter: brightness(0.7);
     }
+
     .overlay {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      inset: 0;
+      background-color: rgba(0,0,0,0.55);
       z-index: -1;
     }
+
     .content {
-      max-width: 400px;
+      max-width: 420px;
       margin: 80px auto;
-      background: rgba(0,0,0,0.7);
-      padding: 30px 20px;
-      border-radius: 12px;
+      background: rgba(0,0,0,0.75);
+      padding: 32px 22px;
+      border-radius: 14px;
       box-shadow: 0 0 30px #00ffcc;
       text-align: center;
       width: 90%;
     }
+
     h1 {
       font-size: 2.4em;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       color: #00ffcc;
       text-shadow: 3px 3px #ee4d2d, 2px 2px #000;
       animation: flash 1.5s infinite alternate;
     }
+
     @keyframes flash {
-      from { opacity: 1; transform: scale(1); }
-      to { opacity: 0.95; transform: scale(1.05); }
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
     }
+
     .subtitle {
       font-size: 1.1em;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       color: #FFDDC1;
       text-shadow: 1px 1px #000;
     }
+
     label {
       display: block;
-      font-size: 1.1em;
-      margin-bottom: 8px;
+      font-size: 1.15em;
+      margin-bottom: 10px;
       color: #00ffcc;
     }
-    input[type="password"] {
+
+    /* ⭐ 重點：輸入框完整版樣式 */
+    input[type="text"] {
       width: 100%;
-      padding: 14px;
-      border-radius: 8px;
+      min-height: 54px;
+      padding: 16px 18px;
+      border-radius: 12px;
       border: none;
-      font-size: 1.1em;
-      margin-bottom: 15px;
+      font-size: 1.2em;
+      margin-bottom: 18px;
+      outline: none;
     }
-    button.submit-btn, .discount-buttons button {
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 14px #00ffcc;
+    }
+
+    button.submit-btn,
+    .discount-buttons button {
       font-size: 1.2em;
       width: 100%;
       padding: 14px 0;
@@ -69,40 +86,51 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(255, 94, 98, 0.8);
+      box-shadow: 0 0 15px rgba(255,94,98,0.8);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    button.submit-btn:hover, .discount-buttons button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+
+    button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 25px rgba(255,255,255,0.9);
     }
+
     .error-msg {
-      color: #ff4444;
+      color: #ff4d4d;
       margin-bottom: 15px;
       font-weight: bold;
     }
+
     .section-title {
       font-size: 1.5em;
       font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 10px;
+      margin-top: 26px;
+      margin-bottom: 12px;
       color: #ff66ff;
       text-shadow: 2px 2px #000;
     }
+
     .discount-buttons {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-top: 10px;
+      animation: pop 0.6s ease-out;
     }
+
+    @keyframes pop {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
     .social-links {
       margin-top: 30px;
-      font-size: 1.1em;
       display: flex;
       flex-direction: column;
       gap: 12px;
       align-items: center;
     }
+
     .social-links a {
       display: block;
       width: 100%;
@@ -110,31 +138,32 @@
       padding: 12px 20px;
       border-radius: 30px;
       box-shadow: 0 0 12px #00ffcc;
-      text-align: center;
       color: #00ffcc;
       font-weight: bold;
       text-decoration: none;
       border: 2px dashed #fff;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0,0,0,0.35);
       transition: transform 0.3s;
     }
+
     .social-links a:hover {
       transform: scale(1.1);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255,255,255,0.2);
     }
+
     @media(min-width: 600px) {
       .discount-buttons {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
       }
       .discount-buttons button {
         width: auto;
-        margin: 0 8px;
+        padding: 14px 22px;
       }
       .social-links {
         flex-direction: row;
-        justify-content: center;
-        gap: 15px;
+        gap: 16px;
       }
       .social-links a {
         width: auto;
@@ -142,37 +171,39 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="overlay"></div>
 
   <div class="content">
     <h1>🎉油飯DD</h1>
-     <h1>專屬折扣碼</h1>
+    <h1>專屬折扣碼</h1>
     <p class="subtitle">蝦皮爸爸來撒券!!!</p>
 
+    <!-- 密語區 -->
     <div id="password-area">
-      <label for="pwd-input">請輸入:聖誕快樂</label>
-      <input id="pwd-input" type="text" placeholder="請輸入密碼" />
+      <label for="pwd-input">請輸入：聖誕快樂</label>
+      <input id="pwd-input" type="text" placeholder="請輸入通關密語" />
       <button class="submit-btn" onclick="checkPassword()">送出</button>
       <p id="error-msg" class="error-msg" style="display:none;">密碼錯誤，請重新輸入</p>
     </div>
 
+    <!-- 折扣區 -->
     <div id="discount-area" style="display:none;">
-      <p class="section-title">🔥全站100-20券</p>
+      <p class="section-title">🔥 全站 100-20 券</p>
       <div class="discount-buttons">
         <button onclick="copyCode('6SJXHX5PGZ')">複製折扣碼</button>
         <button onclick="copyCode('929M9WNB9M')">複製折扣碼</button>
-         <button onclick="copyCode('AJWWELFGV5')">複製折扣碼</button>
-         <button onclick="copyCode('FXF6BWV2FZ')">複製折扣碼</button>
+        <button onclick="copyCode('AJWWELFGV5')">複製折扣碼</button>
+        <button onclick="copyCode('FXF6BWV2FZ')">複製折扣碼</button>
       </div>
     </div>
 
+    <!-- 社群 -->
     <div class="social-links">
-      <p class="section-title">📢 看更多優惠：</p>
-      <a href="https://line.me/ti/g2/ARxvlA8qbIgJf6ut4bngnwDGnLWy3x62pbqiMw" target="_blank" rel="noopener noreferrer">LINE社群</a>
-      <a href="https://www.dcard.tw/@t5976" target="_blank" rel="noopener noreferrer">Dcard帳號</a>
-      <a href="https://www.instagram.com/dd_shopping_go/" target="_blank" rel="noopener noreferrer">Instagram帳號</a>
+      <a href="https://line.me/ti/g2/ARxvlA8qbIgJf6ut4bngnwDGnLWy3x62pbqiMw" target="_blank">LINE 社群</a>
+      <a href="https://www.dcard.tw/@t5976" target="_blank">Dcard</a>
+      <a href="https://www.instagram.com/dd_shopping_go/" target="_blank">Instagram</a>
     </div>
   </div>
 
@@ -180,6 +211,7 @@
     function checkPassword() {
       const input = document.getElementById('pwd-input').value.trim();
       const errorMsg = document.getElementById('error-msg');
+
       if (input === '聖誕快樂') {
         document.getElementById('password-area').style.display = 'none';
         document.getElementById('discount-area').style.display = 'block';
@@ -196,19 +228,9 @@
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
+
       window.location.href = 'https://s.shopee.tw/8zy5zRse41';
     }
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
